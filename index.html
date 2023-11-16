@@ -1,0 +1,1003 @@
+<!-- <?php
+if (isset($_POST["submit"])) {
+    // Retrieve form data
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $message = $_POST["message"];
+
+    // Set up email parameters
+    $to = "rajansharma681@gmail.com"; // Change this to your email address
+    $subject = "New Contact Form Submission";
+    $headers = "From: $email";
+
+    // Compose the email message
+    $email_message = "Name: $name\n";
+    $email_message .= "Email: $email\n";
+    $email_message .= "Message:\n$message";
+
+    // Send the email
+    $success = mail($to, $subject, $email_message, $headers);
+
+    if ($success) {
+        echo "Thank you for your message. We will get back to you soon!";
+        die();
+    } else {
+        echo "Oops! Something went wrong. Please try again later.";
+    }
+}
+
+if (isset($_POST["submit2"])) {
+    // Retrieve form data
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $phone = $_POST["phone"];
+    $message = $_POST["message"];
+
+    // Set up email parameters
+    $to = "rajansharma681@gmail.com"; // Change this to your email address
+    $subject = "New Contact Form Submission";
+    $headers = "From: $email";
+
+    // Compose the email message
+    $email_message = "Name: $name\n";
+    $email_message .= "Email: $email\n";
+    $email_message .= "phone: $phone\n";
+    $email_message .= "Message:\n$message";
+
+    // Send the email
+    $success = mail($to, $subject, $email_message, $headers);
+
+    if ($success) {
+        echo "Thank you for your message. We will get back to you soon!";
+        
+    } else {
+        echo "Oops! Something went wrong. Please try again later.";
+        exit();
+    }
+}
+?> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+  <title>DAVIS TRAN - Portfolio</title>
+  <!-- <link rel="icon" type="image/png" href="images/favicon.png" /> -->
+  <link rel="stylesheet" href="css/font-awesome-pro.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/scroll_button.css" />
+  <link rel="stylesheet" href="css/plugin.css" />
+  <link rel="stylesheet" href="css/spacing.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+  <!--================================
+        PRELOADER START
+    =================================-->
+  <!-- <div class="preloader">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+      </svg>
+      <h5 class="preloader-text">Loading</h5>
+    </div> -->
+  <!--================================
+        PRELOADER END
+    =================================-->
+  <!--================================
+        MENU START
+    =================================-->
+  <nav class="navbar navbar-expand-lg main_menu">
+    <div class="container-fluid main_menu_bg">
+      <a class="navbar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <!-- <img src="images/logo.png" alt="ZYAN" class="img-fluid w-100" /> -->
+        <h3 class="ps-lg-3 ps-md-5 ps-5 fw-bold">PORTFO<span class="fs-3 fw-bold" style="color: #55e6a5;">LIO</span>
+        </h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-sharp fa-regular fa-bars bar_icon"></i>
+        <i class="fa-regular fa-xmark close_icon"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav m-auto">
+          <li class="nav-item">
+            <a class="nav-link text_hover_animaiton active" href="#">Home </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text_hover_animaiton" href="#about">about us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text_hover_animaiton" href="#service">services
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text_hover_animaiton" href="#projects">Projects
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text_hover_animaiton" href="#counter">contact
+            </a>
+          </li>
+        </ul>
+        <span class="toggle_icon c-pointer" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"><i class="fa-sharp fa-sharp fa-regular fa-bars bar_icon-staggered"></i></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
+    <div class="offcanvas-header">
+      <a class="offcanvas-logo" href="index.html">
+        <h4 class=" fw-bold text-nowrap">DAVIS <span class="fs-4 fw-bold" style="color: #55e6a5;">TRAN!</span>
+        </h4>
+      </a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fa-regular fa-xmark"></i>
+      </button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="tf__design_form offcanvas_form">
+        <div class="offcanvas_contact_form mt-0">
+          <h4 class="offcanvas_title">Get In Touch</h4>
+          <form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
+        <input type="text" name="name" placeholder="Your Name" aria-autocomplete="list" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="4" placeholder="Message" required></textarea>
+        <button type="submit" class="common_btn" name="submit">Submit now</button>
+    </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--================================
+        MENU END
+    =================================-->
+
+  <!--================================
+        BANNER START
+    =================================-->
+  <section class="tf__banner banner" style="background: url(images/bg/banner.jpg)">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-xl-6 col-lg-8">
+          <div class="tf__banner_text pt-lg-5">
+            <h1>
+              Hi, I'm DAVIS TRAN! Creative
+              <span class="cd-headline rotate-1">
+                <!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
+                <span class="cd-words-wrapper">
+                  <b class="is-visible">Designer</b>
+                  <b>Programmer</b>
+                </span>
+              </span>
+            </h1>
+            <p>
+              I am a dedicated and skilled programmer with a strong passion for crafting elegant and efficient code.
+              Grounded in a solid understanding of programming principles, I specialize in developing innovative
+              solutions that translate complex concepts into user-friendly applications. With meticulous attention to
+              detail, I aim to create software that not only meets functional requirements but also delivers an
+              exceptional user experience.
+            </p>
+            <ul>
+              <li>
+                <a class="common_btn" href="DAVIS_TRAN_RESUME_.docx" download>Download Resume <i
+                    class="fa-solid fa-arrow-down-to-line"></i></a>
+                <a class="common_btn" href="DAVIS_TRAN_COVER_LETTER.docx" download>Cover Letter <i
+                    class="fa-solid fa-arrow-down-to-line"></i></a>
+              </li>
+              <!-- <li>
+                  <a
+                    class="banner_video_btn play_btn"
+                    href="https://www.youtube.com/watch?v=B-ytMSuwbf8"
+                    ><i class="fa-sharp fa-solid fa-circle-play"></i> Watch the
+                    Video</a
+                  >
+                </li> -->
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-5 col-lg-4">
+          <div class="tf__banner_img">
+            <div class="img">
+              <img src="images/pc.png" alt="ZYAN" class="img-fluid w-100" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================================
+        BANNER END
+    =================================-->
+  <!--================================
+        SERVICE START
+    =================================-->
+  <section class="tf__service pt_130 xs_pt_80" id="service">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 m-auto">
+          <div class="tf__section_heading mb_40">
+            <h5 class="has-animation">MY serivce</h5>
+            <h2 class="has-animation">
+              Crafting stories through
+              design and innovation
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="tf__single_service fade_left" data-trigerId="service">
+            <span>
+              <img src="svg/website-design.svg" alt="service" class="svg w-100" />
+            </span>
+            <h3>UI/UX Design</h3>
+            <p>
+              In the dynamic realm of UI/UX design, I'm dedicated to crafting seamless digital experiences that marry
+              form and function.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="tf__single_service fade_left" data-trigerId="service">
+            <span>
+              <img src="svg/logo-design.svg" alt="service" class="svg w-100" />
+            </span>
+            <h3> Back-end</h3>
+            <p>
+              In back-end development, I engineer robust solutions for seamless digital experiences, mastering data and
+              logic intricacies.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="tf__single_service fade_left" data-trigerId="service">
+            <span>
+              <img src="svg/app-development.svg" alt="service" class="svg w-100" />
+            </span>
+            <h3>Front-end </h3>
+            <p>
+              Front-end maestro sculpting engaging interfaces, blending creativity with cutting-edge tech for immersive
+              user experiences.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="tf__single_service fade_left" data-trigerId="service">
+            <span>
+              <img src="svg/mobile2.svg" alt="service" class="svg w-100 h-auto" />
+            </span>
+            <h3>Mobile app development</h3>
+            <p>
+              In Mobile App Development, I code innovative solutions, shaping user-centric experiences for seamless
+              interaction on diverse devices.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="tf__single_service fade_left" data-trigerId="service">
+            <span>
+              <img src="svg/website.svg" alt="service" class="svg w-100 h-auto" />
+            </span>
+            <h3>Website <br> development</h3>
+            <p>
+              In Website Development, I craft dynamic and user-friendly digital spaces, harmonizing design and
+              functionality for an optimal online experience.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="tf__single_service fade_left" data-trigerId="service">
+            <span>
+              <img src="svg/database.svg" alt="service" class="svg w-100 h-auto" />
+            </span>
+            <h3>data warehouses</h3>
+            <p>
+              In the realm of data warehouses, I architect robust repositories, harmonizing diverse datasets to empower
+              insightful analysis and strategic decision-making.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="tf__single_service fade_left" data-trigerId="service">
+            <span>
+              <img src="svg/logo.svg" alt="service" class="svg w-100 h-auto" />
+            </span>
+            <h3>Logo design</h3>
+            <p>
+              In Logo Design, I blend creativity with purpose, crafting unique visual identities that resonate and leave
+              a lasting impression.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="tf__single_service fade_left" data-trigerId="service">
+            <span>
+              <img src="svg/cyber.svg" alt="service" class="svg w-100 h-auto" />
+            </span>
+            <h3>cybersecurity</h3>
+            <p>
+              In the realm of cybersecurity, I safeguard digital landscapes, implementing robust defenses and proactive
+              measures against evolving threats.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="tf__single_service fade_left" data-trigerId="service">
+            <span>
+              <img src="svg/network.svg" alt="service" class="svg w-100 h-100" />
+            </span>
+            <h3>Network security</h3>
+            <p>
+              In Network Security, I fortify digital infrastructures, implementing measures to protect against cyber
+              threats and ensure data integrity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================================
+        SERVICE END
+    =================================-->
+
+  <!--================================
+        ABOUT START
+    =================================-->
+  <section class="tf__about pt_140 xs_pt_80" id="about">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-xxl-7 col-lg-6 col-xl-6">
+          <div class="tf__section_heading pb_10 xs_pb_50">
+            <h5 class="has-animation">About Me</h5>
+            <!-- <h2 class="has-animation">
+              Transforming visions into exceptional portfolios
+            </h2> -->
+          </div>
+          <div class="tf__about_text">
+            <p style="text-align: justify;">
+              I am first generation from my family that graduated college. My parents moved to the U.S. from Vietnam so
+              that my siblings and I can go to college and and have a good future. My parent's highest education was
+              elementary school. They had to drop out so that they can help their families in the rice fields and farms
+              so that they can provide for their families. I am the second oldest sibling out of four. As for the oldest
+              male besides my father of the household, I had to carry a lot of responsibilities that were given to me.
+              Growing up, I never knew what kind of hobbies I liked because I was too busy helping my parents out with
+              the house, bills, translate from Vietnamese to English, go to doctors appointment, etc. Until my late high
+              school through college years, I started to find certain hobbies that I liked. Growing up, my parents
+              didn't have time to put my siblings and I in extracurricular activities due to of working all the time to
+              provide income. My siblings and I grew up watching ourselves. I am also bilingual so I not only know
+              English, I know Vietnamese. While living under my parents roof, my siblings and I were never allowed to
+              speak English in the house or we would be disciplined. So we only spoke Vietnamese to one another.
+
+            </p>
+            <a class="common_btn mb-xl-0 mb-lg-0 mb-sm-0 mb-3" href="DAVIS_TRAN_RESUME_.docx" download>Download Resume<i
+                class="fa-solid fa-arrow-down-to-line"></i></a>
+            <a class="common_btn" href="DAVIS_TRAN_COVER_LETTER.docx" download>Cover Letter <i
+                class="fa-solid fa-arrow-down-to-line"></i></a>
+          </div>
+        </div>
+        <div class="col-xxl-4 col-lg-6 col-xl-6">
+          <div class="tf__about_img fade_right" data-trigerId="about">
+            <img src="images/aboutpc.png" alt="ZYAN" class="img-fluid w-100" />
+            <div class="tf__about_img_text">
+              <i class="fas fa-chart-pie-alt"></i>
+              <div class="tf__about_content">
+                <h4>Daily Active</h4>
+                <!-- <p>Loream is ispam</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================================
+        ABOUT END
+    =================================-->
+
+  <!--================================
+        DESIGN START
+    =================================-->
+  <section class="tf__design mt_135 xs_mt_40 mb_120 xs_mb_80" id="counter">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 col-lg-6">
+          <div class="tf__design_text">
+            <h2>Design <span>and Development</span></h2>
+            <p class="">
+              For any queries or collaborations related to design and development projects, please feel free to contact
+              me. I am enthusiastic about exploring opportunities and turning your concepts into innovative and
+              impactful solutions. Looking forward to connecting with you!
+            </p>
+          </div>
+          <div class="row">
+            <div class="col-xl-6 col-md-6">
+              <div class="tf__design_counter fade_left" data-trigerId="counter">
+                <span class="icon">
+                  <img src="svg/complete-project.svg" alt="counter" class="svg img-fluid w-100" />
+                </span>
+                <h3><span>5</span>+</h3>
+                <p>Complete project</p>
+              </div>
+            </div>
+            <div class="col-xl-6 col-md-6">
+              <div class="tf__design_counter fade_left" data-trigerId="counter">
+                <span class="icon">
+                  <img src="svg/client-review.svg" alt="counter" class="img-fluid w-100 svg" />
+                </span>
+                <h3><span>3</span>+</h3>
+                <p>Year Work Experience</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <div class="tf__design_form">
+            <h2 class="has-animation">GET TOUCH ME?</h2>
+            <a href="https://www.linkedin.com/in/davis-tran-068731210?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BnFZ9JJ5GSM6KEjv2ISqREQ%3D%3D"
+              style="width: 10%;" target="_blank"><img src="svg/linkedin.svg" alt="" class="img-fluid svg w-100"></a>
+            <form action="<?=$_SERVER['PHP_SELF'];?>" method="post">
+              <input class="" type="text" name="name" placeholder="Your Name" />
+              <input class="" type="email" name="email" placeholder="Your Email" />
+              <input class="" type="text" name="phone" placeholder="Phone Number" />
+              <textarea class="" rows="4" name="message" placeholder="Message"></textarea>
+              <button type="submit" class="common_btn" name="submit2">Submit now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================================
+        DESIGN END
+    =================================-->
+
+  <!--================================
+        SKILLS START
+    =================================-->
+  <section class="tf__skills pt_115 xs_pt_75 pb_70 xs_pb_30" id="skills">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-10 col-lg-8 m-auto mb_10">
+          <div class="tf__section_heading mb_40">
+            <h5 class="has-animation"> My Skill</h5>
+            <h2 class="has-animation">
+              What I'm Good At.
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-6 col-lg-6">
+          <div class="tf__team_skills_bar_single fade_bottom" data-trigerId="skills" data-stagger=".25">
+            <p>Python</p>
+            <div id="bar1" class="barfiller">
+              <div class="tipWrap">
+                <span class="tip"></span>
+              </div>
+              <span class="fill" data-percentage="100"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <div class="tf__team_skills_bar_single fade_bottom" data-trigerId="skills" data-stagger=".25">
+            <p>MYSQL</p>
+            <div id="bar2" class="barfiller">
+              <div class="tipWrap">
+                <span class="tip"></span>
+              </div>
+              <span class="fill" data-percentage="70"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <div class="tf__team_skills_bar_single fade_bottom" data-trigerId="skills" data-stagger=".25">
+            <p>UI/UX design</p>
+            <div id="bar4" class="barfiller">
+              <div class="tipWrap">
+                <span class="tip"></span>
+              </div>
+              <span class="fill" data-percentage="80"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <div class="tf__team_skills_bar_single fade_bottom" data-trigerId="skills" data-stagger=".25">
+            <p>HTML/CSS</p>
+            <div id="bar5" class="barfiller">
+              <div class="tipWrap">
+                <span class="tip"></span>
+              </div>
+              <span class="fill" data-percentage="80"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <div class="tf__team_skills_bar_single fade_bottom" data-trigerId="skills" data-stagger=".25">
+            <p>C++</p>
+            <div id="bar6" class="barfiller">
+              <div class="tipWrap">
+                <span class="tip"></span>
+              </div>
+              <span class="fill" data-percentage="80"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <div class="tf__team_skills_bar_single fade_bottom" data-trigerId="skills" data-stagger=".25">
+            <p>Kotlin/Java</p>
+            <div id="bar7" class="barfiller">
+              <div class="tipWrap">
+                <span class="tip"></span>
+              </div>
+              <span class="fill" data-percentage="80"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <div class="tf__team_skills_bar_single fade_bottom" data-trigerId="skills" data-stagger=".25">
+            <p>Systems & Network Security</p>
+            <div id="bar3" class="barfiller">
+              <div class="tipWrap">
+                <span class="tip"></span>
+              </div>
+              <span class="fill" data-percentage="80"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <div class="tf__team_skills_bar_single fade_bottom" data-trigerId="skills" data-stagger=".25">
+            <p>Incident Analysis & Recovery</p>
+            <div id="bar8" class="barfiller">
+              <div class="tipWrap">
+                <span class="tip"></span>
+              </div>
+              <span class="fill" data-percentage="80"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <div class="tf__team_skills_bar_single fade_bottom" data-trigerId="skills" data-stagger=".25">
+            <p>CompTIA Security</p>
+            <div id="bar9" class="barfiller">
+              <div class="tipWrap">
+                <span class="tip"></span>
+              </div>
+              <span class="fill" data-percentage="80"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <div class="tf__team_skills_bar_single fade_bottom" data-trigerId="skills" data-stagger=".25">
+            <p>Tableu</p>
+            <div id="bar10" class="barfiller">
+              <div class="tipWrap">
+                <span class="tip"></span>
+              </div>
+              <span class="fill" data-percentage="80"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <div class="tf__team_skills_bar_single fade_bottom" data-trigerId="skills" data-stagger=".25">
+            <p>Power BI</p>
+            <div id="bar11" class="barfiller">
+              <div class="tipWrap">
+                <span class="tip"></span>
+              </div>
+              <span class="fill" data-percentage="70"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+          <div class="tf__team_skills_bar_single fade_bottom" data-trigerId="skills" data-stagger=".25">
+            <p>Ms Word, Excel, and Access</p>
+            <div id="bar12" class="barfiller">
+              <div class="tipWrap">
+                <span class="tip"></span>
+              </div>
+              <span class="fill" data-percentage="70"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================================
+        SKILLS END
+    =================================-->
+
+  <!--================================
+        PORTFOLIO START
+    =================================-->
+  <section class="tf__portfolio mt_120 xs_mt_80" id="projects">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-10 col-lg-9 mb_30">
+          <div class="tf__section_heading">
+            <h5 class="has-animation">My recent Projects</h5>
+            <h2 class="has-animation">
+              Check out some of my work
+            </h2>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-xl-4 col-md-4">
+          <a href="http://davisgotticketsnew.atwebpages.com" class="tf__portfolio_item rounded" target="_blank">
+            <img src="images/portfolio/ticket book.png" alt="portfolio" class="img-fluid w-100" />
+            <div class="text">
+              <h4>Ticket booking Website</h4>
+              <p>• HTML • CSS</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-xl-4 col-md-4">
+          <a href="images/portfolio/parking.png" class="tf__portfolio_item image_popup rounded" target="_blank">
+            <img src="images/portfolio/parking.png" alt="portfolio" class="img-fluid w-100" />
+            <div class="text">
+              <h4>Parking App Home</h4>
+              <p>• AndroidStudio • HTML • CSS</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-xl-4 col-md-4">
+          <a href="images/portfolio/parking2.png" class="tf__portfolio_item image_popup rounded">
+            <img src="images/portfolio/parking2.png" alt="portfolio" class="img-fluid w-100" />
+            <div class="text">
+              <h4>Parking App Select Parking</h4>
+              <p>• AndroidStudio • HTML • CSS</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-xl-4 col-md-4">
+          <a href="images/portfolio/parking3.png" class="tf__portfolio_item image_popup rounded">
+            <img src="images/portfolio/parking3.png" alt="portfolio" class="img-fluid w-100" />
+            <div class="text">
+              <h4>Parking App Form</h4>
+              <p>• AndroidStudio • HTML • CSS</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-xl-4 col-md-4 pb-2">
+          <a href="images/portfolio/Interest Calc.png" class="tf__portfolio_item image_popup rounded" target="_blank">
+            <img src="images/portfolio/Interest Calc.png" alt="portfolio" class="img-fluid w-100" />
+            <div class="text">
+              <h4>Interest Rate Calculator</h4>
+              <p>• Python</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-xl-4 col-md-4 pb-2">
+          <a href="images/portfolio/salessheet.png" class="tf__portfolio_item image_popup rounded" target="_blank">
+            <img src="images/portfolio/salessheet.png" alt="portfolio" class="img-fluid w-100" />
+            <div class="text">
+              <h4>Home</h4>
+              <p>• MySQL</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================================
+        PORTFOLIO END
+    =================================-->
+
+  <!--================================
+        TESTIMONIAL START
+    =================================-->
+  <!-- <section class="tf__testimonial pt_115 xs_pt_75">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8 m-auto mb_30">
+          <div class="tf__section_heading">
+            <h5 class="has-animation">clients review</h5>
+            <h2 class="has-animation">My testomonial</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row testi_slider">
+        <div class="col-xl-6">
+          <div class="tf__single_testimonial">
+            <div class="img">
+              <img src="images/testimonial/1.jpg" alt="clients" class="img-fluid w-100" />
+            </div>
+            <p class="rating">
+              <i class="fa-solid fa-star-sharp"></i>
+              <i class="fa-solid fa-star-sharp"></i>
+              <i class="fa-solid fa-star-sharp"></i>
+              <i class="fa-solid fa-star-sharp"></i>
+              <i class="fa-solid fa-star-sharp"></i>
+            </p>
+            <h3>Eleanor pena</h3>
+            <h5>Marketing Coordinator</h5>
+            <p class="description">
+              Financial planners help people to knowledge in about how to
+              invest and in save their moneye the most efficient way eve plan
+              ners help people tioniio know ledige in about how.
+            </p>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="tf__single_testimonial">
+            <div class="img">
+              <img src="images/testimonial/2.jpg" alt="clients" class="img-fluid w-100" />
+            </div>
+            <p class="rating">
+              <i class="fa-solid fa-star-sharp"></i>
+              <i class="fa-solid fa-star-sharp"></i>
+              <i class="fa-solid fa-star-sharp"></i>
+              <i class="fa-solid fa-star-sharp"></i>
+              <i class="fa-solid fa-star-sharp"></i>
+            </p>
+            <h3>Eleanor pena</h3>
+            <h5>Marketing Coordinator</h5>
+            <p class="description">
+              Financial planners help people to knowledge in about how to
+              invest and in save their moneye the most efficient way eve plan
+              ners help people tioniio know ledige in about how.
+            </p>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="tf__single_testimonial">
+            <div class="img">
+              <img src="images/testimonial/1.jpg" alt="clients" class="img-fluid w-100" />
+            </div>
+            <p class="rating">
+              <i class="fa-solid fa-star-sharp"></i>
+              <i class="fa-solid fa-star-sharp"></i>
+              <i class="fa-solid fa-star-sharp"></i>
+              <i class="fa-solid fa-star-sharp"></i>
+              <i class="fa-solid fa-star-sharp"></i>
+            </p>
+            <h3>Eleanor pena</h3>
+            <h5>Marketing Coordinator</h5>
+            <p class="description">
+              Financial planners help people to knowledge in about how to
+              invest and in save their moneye the most efficient way eve plan
+              ners help people tioniio know ledige in about how.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!--================================
+        TESTIMONIAL END
+    =================================-->
+
+  <!--================================
+        BRAND START
+    =================================-->
+  <!-- <div class="tf__brand mt_120 xs_mt_80">
+    <div class="row">
+      <div class="col-12">
+        <div class="marquee_animi">
+          <ul>
+            <li>* PHP</li>
+            <li>* Pyrhon</li>
+            <li>* design</li>
+            <li>* world</li>
+            <li>* Development</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!--================================
+        BRAND END
+    =================================-->
+
+  <!--================================
+        BLOG START
+    =================================-->
+  <!-- <section class="tf__blog pt_125 xs_pt_75 pb_40 xs_pb_0" id="blogs">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8 col-lg-9 mb_30">
+          <div class="tf__section_heading">
+            <h5 class="has-animation">My blog</h5>
+            <h2 class="has-animation">
+              Unlocking the potential of your personal brand
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 col-md-6">
+          <div class="tf__slingle_blog fade_left" data-trigerId="blogs">
+            <a href="blog_details.html" class="tf__blog_img" data-cursor="read <br> more">
+              <img src="images/blog/1.jpg" alt="blog" class="img-fluid w-100" />
+            </a>
+            <div class="tf__blog_text">
+              <span>31 December,2022</span>
+              <ul>
+                <li>
+                  <i class="fa-sharp fa-solid fa-circle-user"></i> By admin
+                </li>
+                <li>
+                  <i class="fa-sharp fa-solid fa-comments"></i> Comments (05)
+                </li>
+              </ul>
+              <a href="blog_details.html">The standard personal My portfolio</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <div class="tf__slingle_blog fade_left" data-trigerId="blogs">
+            <a href="blog_details.html" class="tf__blog_img" data-cursor="read <br> more">
+              <img src="images/blog/2.jpg" alt="blog" class="img-fluid w-100" />
+            </a>
+            <div class="tf__blog_text">
+              <span>31 December,2022</span>
+              <ul>
+                <li>
+                  <i class="fa-sharp fa-solid fa-circle-user"></i> By admin
+                </li>
+                <li>
+                  <i class="fa-sharp fa-solid fa-comments"></i> Comments (05)
+                </li>
+              </ul>
+              <a href="blog_details.html">The standard personal My portfolio</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <div class="tf__slingle_blog fade_left" data-trigerId="blogs">
+            <a href="blog_details.html" class="tf__blog_img" data-cursor="read <br> more">
+              <img src="images/blog/3.jpg" alt="blog" class="img-fluid w-100" />
+            </a>
+            <div class="tf__blog_text">
+              <span>31 December,2022</span>
+              <ul>
+                <li>
+                  <i class="fa-sharp fa-solid fa-circle-user"></i> By admin
+                </li>
+                <li>
+                  <i class="fa-sharp fa-solid fa-comments"></i> Comments (05)
+                </li>
+              </ul>
+              <a href="blog_details.html">The standard personal My portfolio</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <a href="blog_list.html" class="common_btn">More Blog +</a>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!--================================
+        BLOG END
+    =================================-->
+  <!--================================
+        SUBSCRIBE START
+    =================================-->
+  <!-- <div class="tf__subscribe" style="background: url(images/bg/subscribe.jpg)">
+    <div class="tf__subscribe_overlay pt_115 xs_pt_75 pb_120 xs_pb_80">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-6 col-lg-8 col-md-10 m-auto">
+            <div class="tf__subscribe_text">
+              <h3 class="has-animation">SUBSCRIBE MY NEWSLETTER</h3>
+              <form action="#" class="">
+                <input type="text" placeholder="Enter Your Email" />
+                <button type="submit" class="common_btn">Notify Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!--================================
+SUBSCRIBE END
+=================================-->
+
+  <!--================================
+        FOOTER START
+    =================================-->
+  <footer class="footer" id="footer">
+    <div class="footer-container">
+      <div class="pt_120 xs_pt_80 sm_pt_80">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="tf__footer_content fade_right" data-trigerId="footer" data-stagger=".25">
+                <div class="icon">
+                  <div class="icon-contianer">
+                    <img src="svg/map.svg" alt="footer" class="img-fluid w-100 svg" />
+                  </div>
+                </div>
+                <div class="text">
+                  <h3>Address</h3>
+                  <p>8430 Montravail Cir, Apt 336, Temple Terrace, 33637 FL</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="tf__footer_content fade_right" data-trigerId="footer" data-stagger=".25">
+                <div class="icon">
+                  <div class="icon-contianer">
+                    <img src="svg/phone.svg" alt="footer" class="img-fluid w-100 svg" />
+                  </div>
+                </div>
+                <div class="text">
+                  <h3>Lets talk us</h3>
+                  <a href="tel:(239) 244-6482">(239) 244-6482</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="tf__footer_content fade_right" data-trigerId="footer" data-stagger=".25">
+                <div class="icon">
+                  <div class="icon-contianer">
+                    <img src="svg/envelope.svg" alt="footer" class="img-fluid w-100 svg" />
+                  </div>
+                </div>
+                <div class="text">
+                  <h3>Send us email</h3>
+                  <a href="mailto:dtran98@outlook.com">dtran98@outlook.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="tf__footer_copyright">
+                <p>© DAVIS TRAN 2023 | All Rights Reserved</p>
+                <ul>
+                  <li class="d-flex align-items-center">
+                    <span>Design & Develop By</span> &nbsp;<a href="https://www.fiverr.com/rajansharma626"
+                      class="text_hover_animaiton"> Rajan Sharma</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--================================
+  FOOTER END
+=================================-->
+  <!--================================
+        SCROLL BUTTON START
+    =================================-->
+  <div class="progress active c-pointer">
+    <svg class="progress-svg" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+    </svg>
+  </div>
+  <!--================================
+        SCROLL BUTTON END
+    =================================-->
+
+
+  <script src="js/plugin.js"></script>
+  <!--scroll button js-->
+  <script src="js/scroll_button.js"></script>
+  <!--sticky sidebar js-->
+  <script src="js/sticky_sidebar.js"></script>
+  <!-- Animation -->
+  <script src="js/animation.js"></script>
+  <!--main/custom js-->
+  <script src="js/main.js"></script>
+</body>
+
+
+</html>
