@@ -1,63 +1,3 @@
-<!-- <?php
-if (isset($_POST["submit"])) {
-    // Retrieve form data
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $message = $_POST["message"];
-
-    // Set up email parameters
-    $to = "rajansharma681@gmail.com"; // Change this to your email address
-    $subject = "New Contact Form Submission";
-    $headers = "From: $email";
-
-    // Compose the email message
-    $email_message = "Name: $name\n";
-    $email_message .= "Email: $email\n";
-    $email_message .= "Message:\n$message";
-
-    // Send the email
-    $success = mail($to, $subject, $email_message, $headers);
-
-    if ($success) {
-        echo "Thank you for your message. We will get back to you soon!";
-        die();
-    } else {
-        echo "Oops! Something went wrong. Please try again later.";
-    }
-}
-
-if (isset($_POST["submit2"])) {
-    // Retrieve form data
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $phone = $_POST["phone"];
-    $message = $_POST["message"];
-
-    // Set up email parameters
-    $to = "rajansharma681@gmail.com"; // Change this to your email address
-    $subject = "New Contact Form Submission";
-    $headers = "From: $email";
-
-    // Compose the email message
-    $email_message = "Name: $name\n";
-    $email_message .= "Email: $email\n";
-    $email_message .= "phone: $phone\n";
-    $email_message .= "Message:\n$message";
-
-    // Send the email
-    $success = mail($to, $subject, $email_message, $headers);
-
-    if ($success) {
-        echo "Thank you for your message. We will get back to you soon!";
-        
-    } else {
-        echo "Oops! Something went wrong. Please try again later.";
-        exit();
-    }
-}
-?> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -81,12 +21,12 @@ if (isset($_POST["submit2"])) {
   <!--================================
         PRELOADER START
     =================================-->
-  <!-- <div class="preloader">
+  <div class="preloader">
       <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
         <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
       </svg>
       <h5 class="preloader-text">Loading</h5>
-    </div> -->
+    </div>
   <!--================================
         PRELOADER END
     =================================-->
@@ -146,11 +86,12 @@ if (isset($_POST["submit2"])) {
       <div class="tf__design_form offcanvas_form">
         <div class="offcanvas_contact_form mt-0">
           <h4 class="offcanvas_title">Get In Touch</h4>
-          <form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
-        <input type="text" name="name" placeholder="Your Name" aria-autocomplete="list" required />
-        <input type="email" name="email" placeholder="Your Email" required />
+          <form action="https://formspree.io/f/mvojnwrd"
+          method="POST">
+        <input type="text" name="Name" placeholder="Your Name" aria-autocomplete="list" required /> 
+        <input type="email" name="Email" placeholder="Your Email" required />
         <textarea name="message" rows="4" placeholder="Message" required></textarea>
-        <button type="submit" class="common_btn" name="submit">Submit now</button>
+        <button type="submit" class="common_btn">Submit now</button>
     </form>
         </div>
       </div>
@@ -443,12 +384,13 @@ if (isset($_POST["submit2"])) {
             <h2 class="has-animation">GET TOUCH ME?</h2>
             <a href="https://www.linkedin.com/in/davis-tran-068731210?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BnFZ9JJ5GSM6KEjv2ISqREQ%3D%3D"
               style="width: 10%;" target="_blank"><img src="svg/linkedin.svg" alt="" class="img-fluid svg w-100"></a>
-            <form action="<?=$_SERVER['PHP_SELF'];?>" method="post">
-              <input class="" type="text" name="name" placeholder="Your Name" />
-              <input class="" type="email" name="email" placeholder="Your Email" />
-              <input class="" type="text" name="phone" placeholder="Phone Number" />
-              <textarea class="" rows="4" name="message" placeholder="Message"></textarea>
-              <button type="submit" class="common_btn" name="submit2">Submit now</button>
+            <form action="https://formspree.io/f/mvojnwrd"
+            method="POST">
+              <input class="" type="text" name="Name" placeholder="Your Name" />
+              <input class="" type="email" name="Email" placeholder="Your Email" />
+              <input class="" type="text" name="Phone" placeholder="Phone Number" />
+              <textarea class="" rows="4" name="Message" placeholder="Message"></textarea>
+              <button type="submit" class="common_btn">Submit now</button>
             </form>
           </div>
         </div>
@@ -961,8 +903,8 @@ SUBSCRIBE END
                 <p>© DAVIS TRAN 2023 | All Rights Reserved</p>
                 <ul>
                   <li class="d-flex align-items-center">
-                    <span>Design & Develop By</span> &nbsp;<a href="https://www.fiverr.com/rajansharma626"
-                      class="text_hover_animaiton"> Rajan Sharma</a>
+                    <span>Design & Develop By</span> &nbsp;<a href="https://www.linkedin.com/in/davis-tran-068731210?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BnFZ9JJ5GSM6KEjv2ISqREQ%3D%3D"
+                      class="text_hover_animaiton"> DAVIS TRAN</a>
                   </li>
                 </ul>
               </div>
